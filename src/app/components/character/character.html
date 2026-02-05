@@ -1,0 +1,20 @@
+<div class="character">
+    <div class="character_item">
+        <mat-card class="character_card" appearance="outlined">
+            <img mat-card-image [src]="character().image" alt="Photo of a Shiba Inu">
+            <mat-card-content class="character_card_content">
+
+                <div class="character_name">
+                    <p>
+                        {{ character().name }}
+                    </p>
+                </div>
+
+                <div class="character_favorite_icon">
+                    <mat-icon class="character_favorite_icon">star_border</mat-icon>
+                </div>
+                
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

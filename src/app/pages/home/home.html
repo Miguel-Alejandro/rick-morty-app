@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="home">
+        <div class="home_title">
+            <h1>WUBBA LUBBA DUB DUB</h1>
+            <p>Base de datos de personajes de Rick and Morty</p>
+        </div>
+
+        <div class="home_actions">
+            <div class="search">
+                <app-search-bar></app-search-bar>
+            </div>
+
+            <div class="favorites">
+                <p>Mis favoritos</p>
+                <div class="favorites_icon">
+                    <mat-icon>star_border</mat-icon>
+                </div>
+            </div>
+        </div>
+
+        <div class="home_characters">
+            @for (item of character().results; track $index) {
+                <div class="character_list">
+                    <app-character [character]="item"></app-character>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+

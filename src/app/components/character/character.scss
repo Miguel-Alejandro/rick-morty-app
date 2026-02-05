@@ -1,0 +1,11 @@
+.character{
+    .character_item{
+        .character_card{
+            .character_card_content{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+    }
+}
