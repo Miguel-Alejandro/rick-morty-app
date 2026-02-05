@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="favorites">
+        <div class="favorites_title">
+            <h1>Mis favoritos</h1>
+        </div>
+
+        <div class="favorites_actions">
+            
+        </div>
+
+        <div class="favorites_characters">
+            @for (item of getFavorites; track $index) {
+                <div class="favorites_list">
+                    <app-character [character]="item"></app-character>
+                </div>
+            }
+        </div>
+    </div>
+</div>

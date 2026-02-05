@@ -1,0 +1,54 @@
+.favorites {
+    width: 100%;
+    margin-top: 33px;
+    .favorites_title {
+        text-align: center;
+    } 
+    
+    .favorites_characters{
+        margin-top: 120px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px;
+        .favorites_list{
+            width: 19%;
+            margin-bottom: 1rem;
+        }   
+    }
+}
+
+@media (max-width: 992px) {
+    .favorites{
+
+        .home_characters{
+            .character_list{
+                width: 23%;
+            }   
+        }
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    .favorites{
+
+        .favorites_characters{
+            .favorites_list{
+                width: 32%;
+            }   
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .favorites{
+
+        .favorites_characters{
+            .favorites_list{
+                width: 48%;
+            }   
+        }
+    }
+}
