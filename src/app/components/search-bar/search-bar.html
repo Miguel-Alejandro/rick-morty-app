@@ -1,4 +1,4 @@
 <mat-form-field appearance="outline">
     <mat-icon matPrefix>search</mat-icon>
-    <input matInput placeholder="Buscar...">
+    <input (input)="searchCharacter($event.target.value)" matInput placeholder="Buscar...">
 </mat-form-field>

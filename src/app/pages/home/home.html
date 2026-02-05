@@ -19,7 +19,7 @@
         </div>
 
         <div class="home_characters">
-            @for (item of character().results; track $index) {
+            @for (item of getCharacter.results; track $index) {
                 <div class="character_list">
                     <app-character [character]="item"></app-character>
                 </div>
