@@ -11,7 +11,9 @@
                 </div>
 
                 <div class="character_favorite_icon">
-                    <mat-icon class="character_favorite_icon">star_border</mat-icon>
+                    <mat-icon class="character_favorite_icon" (click)="addOrRemoveToFavorite()">
+                        {{ isFAvorite(character().id) ? 'star' : 'star_border' }}
+                    </mat-icon>
                 </div>
                 
             </mat-card-content>
