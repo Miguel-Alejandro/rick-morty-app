@@ -19,8 +19,8 @@
         </div>
 
         <div class="home_characters">
-            @for (item of getCharacter.results; track $index) {
-                <div class="character_list">
+            @for (item of getCharacter?.results; track $index) {
+                <div class="character_list" (click)="openCharacterDetails(item)">
                     <app-character [character]="item"></app-character>
                 </div>
             }

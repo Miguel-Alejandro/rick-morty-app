@@ -1,0 +1,29 @@
+<div class="character_details">
+
+    <div class="close">
+        <button 
+        mat-flat-button class="btn-cerrar"
+        (click)="close()">
+            CERRAR
+            <mat-icon class="close-icon">close</mat-icon>
+        </button>
+    </div>
+
+    <div class="character_image">
+        <img [src]="data.image" alt="">
+    </div>
+
+    <div class="character_name">
+        <p>{{data.name}}</p>
+    </div>
+
+    <div class="character_info">
+        <mat-chip-set class="details">
+            <mat-chip class="chip-blue"><b>Estado:</b> {{data.status}}</mat-chip>
+            <mat-chip class="chip-purple"><b>Género:</b> {{data.gender}}</mat-chip>
+            <mat-chip class="chip-green"><b>Especie:</b> {{data.species}}</mat-chip>
+            <mat-chip class="chip-yellow"><b>Origen:</b> {{data.origin.name}}</mat-chip>
+            <mat-chip class="chip-orange"><b>Ubicación:</b> {{data.location.name}}</mat-chip>
+        </mat-chip-set>
+    </div>
+</div>
