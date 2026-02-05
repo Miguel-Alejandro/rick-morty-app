@@ -1,6 +1,8 @@
 @use '@angular/material' as mat;
 /* CUSTOM CLASSES */
 @use "./theme/pages/main";
+@use "./theme/atoms/chips";
+@use "./theme/templates/modal";
 
 *{
   box-sizing: border-box;
