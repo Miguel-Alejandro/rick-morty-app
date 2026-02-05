@@ -1,10 +1,9 @@
 import { Component, OnInit, signal } from '@angular/core';
 import { SearchBar } from '../../components/search-bar/search-bar';
 import { Character } from '../../components/character/character';
-import { Character as CharacterClass } from '../../classes/Character';
 import { CharacterService } from '../../services/character/character-service';
 import { firstValueFrom } from 'rxjs';
-import { MatButton, MatButtonModule } from '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 
 @Component({
@@ -12,7 +11,6 @@ import { MatIconModule } from '@angular/material/icon';
   imports: [
     SearchBar,
     Character,
-    MatButton,
     MatIconModule,
     MatButtonModule
   ],
@@ -21,8 +19,6 @@ import { MatIconModule } from '@angular/material/icon';
 })
 export class Home implements OnInit{
 
-  public character = signal<CharacterClass>(null);
-
   constructor(private characterSrv: CharacterService) { }
 
   ngOnInit(): void {
@@ -30,9 +26,11 @@ export class Home implements OnInit{
   }
 
   private getCharacters = async (): Promise<void> => {
-    this.character.set(await firstValueFrom(this.characterSrv.character()));
-    console.log('character', this.character());
-    console.log('character img', this.character().results[0].image);
+    this.characterSrv.character.set(await firstValueFrom(this.characterSrv.getCharacter()));
+  }
+
+  public get getCharacter(){
+    return this.characterSrv.character();
   }
 
 }
