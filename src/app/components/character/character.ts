@@ -1,8 +1,10 @@
-import { Component, input } from '@angular/core';
+import { Component, input, OnInit } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { CharacterResult } from '../../classes/Character';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { FavoritesService } from '../../services/favorites/favorites';
+import { ModalsService } from '../../services/modals/modals';
 
 @Component({
   selector: 'app-character',
@@ -14,7 +16,28 @@ import { MatIconModule } from '@angular/material/icon';
   templateUrl: './character.html',
   styleUrl: './character.scss',
 })
-export class Character {
+export class Character implements OnInit {
   public character = input.required<CharacterResult>();
+
+  constructor(
+    private favoritesService: FavoritesService,
+    private modalSrv: ModalsService,
+  ) {}
+
+  public ngOnInit(): void {
+    this.isFAvorite(this.character().id);
+  }
+
+  public addOrRemoveToFavorite() {
+    this.favoritesService.toggleFavorite(this.character());
+  }
+
+  public openCharacterDetails = (character: CharacterResult) => {
+    this.modalSrv.openCharacterDetailsModal(character);
+  }
+
+  public isFAvorite = (id: number) => {
+    return this.favoritesService.isFavorite(id);
+  }
 
 }

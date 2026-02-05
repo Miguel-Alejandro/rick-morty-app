@@ -1,19 +1,20 @@
-.home{
+.favorites {
     width: 100%;
     margin-top: 33px;
-    .home_title{
-     text-align: center;   
-    }
+    .favorites_title {
+        text-align: center;
+    } 
 
-    .home_actions{
+    .favorites_actions{
         display: flex;
         justify-content: space-between;
         align-items: center;
 
-        .favorites{
-            width: 11%;
+        .home{
+            width: 7%;
             display: flex;
             justify-content: space-between;
+            flex-direction: row-reverse;
             align-items: center;
             height: 38px;
             background: #F7F7F8;
@@ -21,81 +22,81 @@
             border-radius: 5px;
             cursor: pointer;
 
-            .favorites_icon{
+            .home_icon{
                 display: flex;
                 align-items: center;
-                background-color: #4339F2;
+                background-color: #2d68a2;
                 color: white;
                 border-radius: 4px;   
             }
         }
     }
-
-    .home_characters{
+    
+    .favorites_characters{
+        margin-top: 30px;
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
         align-items: center;
         gap: 10px;
-
-        .character_list{
+        .favorites_list{
             width: 19%;
             margin-bottom: 1rem;
-        }
+        }   
     }
 }
 
 @media (max-width: 992px) {
-    .home{
+    .favorites{
 
         .home_characters{
             .character_list{
                 width: 23%;
             }   
         }
+    }
+}
 
-        .home_actions{
-            .favorites{
-                width: 21%;
+@media (max-width: 992px) {
+    .favorites{
+
+        .favorites_actions{
+            .home{
+                width: 13%;
             }
         }
     }
 }
 
 
-
 @media (max-width: 768px) {
-    .home{
+    .favorites{
 
-        .home_characters{
-            .character_list{
+        .favorites_characters{
+            .favorites_list{
                 width: 32%;
             }   
         }
 
-        .home_actions{
-            .favorites{
-                width: 29%;
+        .favorites_actions{
+            .home{
+                width: 19%;
             }
         }
     }
 }
 
 @media (max-width: 576px) {
-    .home{
+    .favorites{
 
-        .home_characters{
-            .character_list{
+        .favorites_characters{
+            .favorites_list{
                 width: 48%;
             }   
         }
 
-        .home_actions{
-            .search{
-                width: 140px;
-            }
-            .favorites{
-                width: 40%;
+        .favorites_actions{
+            .home{
+                width: 25%;
             }
         }
     }

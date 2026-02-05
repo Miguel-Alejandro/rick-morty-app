@@ -10,7 +10,7 @@
                 <app-search-bar></app-search-bar>
             </div>
 
-            <div class="favorites">
+            <div class="favorites" (click)="goToFavorites()">
                 <p>Mis favoritos</p>
                 <div class="favorites_icon">
                     <mat-icon>star_border</mat-icon>
@@ -20,7 +20,7 @@
 
         <div class="home_characters">
             @for (item of getCharacter?.results; track $index) {
-                <div class="character_list" (click)="openCharacterDetails(item)">
+                <div class="character_list">
                     <app-character [character]="item"></app-character>
                 </div>
             }
