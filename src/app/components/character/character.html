@@ -1,7 +1,10 @@
 <div class="character">
     <div class="character_item">
         <mat-card class="character_card" appearance="outlined">
-            <img mat-card-image [src]="character().image" alt="Photo of a Shiba Inu">
+            <img 
+            mat-card-image
+            [src]="character().image" alt="Photo of a Shiba Inu"
+            (click)="openCharacterDetails(character())">
             <mat-card-content class="character_card_content">
 
                 <div class="character_name">

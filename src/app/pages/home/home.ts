@@ -5,8 +5,7 @@ import { CharacterService } from '../../services/character/character-service';
 import { firstValueFrom } from 'rxjs';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import {  ModalsService } from '../../services/modals/modals';
-import { CharacterResult } from '../../classes/Character';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -23,15 +22,15 @@ export class Home implements OnInit{
 
   constructor(
     private characterSrv: CharacterService,
-    private modalSrv: ModalsService
+    private router: Router
   ) { }
 
   ngOnInit(): void {
     this.getCharacters();
   }
 
-  public openCharacterDetails = (character: CharacterResult) => {
-    this.modalSrv.openCharacterDetailsModal(character);
+  public goToFavorites = (): void => {
+    this.router.navigate(["/favorites"])
   }
 
   private getCharacters = async (): Promise<void> => {

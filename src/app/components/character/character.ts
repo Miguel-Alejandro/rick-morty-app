@@ -4,6 +4,7 @@ import { CharacterResult } from '../../classes/Character';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { FavoritesService } from '../../services/favorites/favorites';
+import { ModalsService } from '../../services/modals/modals';
 
 @Component({
   selector: 'app-character',
@@ -18,7 +19,10 @@ import { FavoritesService } from '../../services/favorites/favorites';
 export class Character implements OnInit {
   public character = input.required<CharacterResult>();
 
-  constructor(private favoritesService: FavoritesService) {}
+  constructor(
+    private favoritesService: FavoritesService,
+    private modalSrv: ModalsService,
+  ) {}
 
   public ngOnInit(): void {
     this.isFAvorite(this.character().id);
@@ -26,6 +30,10 @@ export class Character implements OnInit {
 
   public addOrRemoveToFavorite() {
     this.favoritesService.toggleFavorite(this.character());
+  }
+
+  public openCharacterDetails = (character: CharacterResult) => {
+    this.modalSrv.openCharacterDetailsModal(character);
   }
 
   public isFAvorite = (id: number) => {

@@ -53,6 +53,12 @@
                 width: 23%;
             }   
         }
+
+        .home_actions{
+            .favorites{
+                width: 21%;
+            }
+        }
     }
 }
 
@@ -66,6 +72,12 @@
                 width: 32%;
             }   
         }
+
+        .home_actions{
+            .favorites{
+                width: 29%;
+            }
+        }
     }
 }
 
@@ -76,6 +88,15 @@
             .character_list{
                 width: 48%;
             }   
+        }
+
+        .home_actions{
+            .search{
+                width: 140px;
+            }
+            .favorites{
+                width: 40%;
+            }
         }
     }
 }
